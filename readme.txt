@@ -10,10 +10,10 @@ Allows you to display Basecamp Feeds on your WordPress.
 
 == Description ==
 
-Allows you to display Basecamp Feeds on your WordPress.
+Display Multiple or Single To-Do lists from any project.
 
 = Features include the following: =
-  * Display All/Multiple/Single ToDo list(s) from a project!
+  * Display Multiple or Single To-Do lists from any project.
   * Easily generate all the shortcodes you need for any feed with our SUPER SIMPLE shortcode generator!
   * Responsive Feeds!
 
