@@ -1,6 +1,6 @@
 === BaseCamp Feed ===
 Contributors: slickremix
-Tags:  basecamp, basecamp feed, 
+Tags:  basecamp, basecamp feed, project management, feed, feeds, display, base camp
 Requires at least: 3.4.0
 Tested up to: 4.1.0
 Stable tag: 1.0.0
