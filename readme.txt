@@ -6,23 +6,16 @@ Tested up to: 4.1.0
 Stable tag: 1.0.0
 License: GPLv2 or later
 
-Allows you to display Basecamp Feeds on your WordPress.
+Display Multiple or Single To-Do lists from any Basecamp project!
 
 == Description ==
 
-Display Multiple or Single To-Do lists from any project.
-
 = Features include the following: =
-  * Display Multiple or Single To-Do lists from any project.
+  * Display Multiple or Single To-Do lists from any Basecamp project.
   * Easily generate all the shortcodes you need for any feed with our SUPER SIMPLE shortcode generator!
   * Responsive Feeds!
-
-= Demos =
-  * Coming Soon!
   
 ALL SlickRemix plugins come with FREE Support! If you need help or have questions we are here to help just post on our [Support Forum](http://www.slickremix.com/support-forum/) and we’ll get to you as quickly as we can! (usually within 48hrs)
-	
-If you enjoy using our plugin please tell others. [Click here to share](http://www.facebook.com/sharer.php?u=http://wordpress.org/plugins/feed-them-social/&t=FeedThemSocial).
 
 == Installation ==
 
