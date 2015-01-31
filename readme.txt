@@ -50,7 +50,7 @@ Not at this time but should be shortly.
 
 == Screenshots ==
 1. To-Dos List pulled in from a Basecamp project.
-2. The Settings page that connects you to Basecamp and help you generate a simple shortcode you can paste on any post, page or widget. You can also change the times format, timezone and add custom CSS if you need.
+2. The Settings page that connects you to Basecamp and helps you generate a simple shortcode you can paste on any post, page or widget. You can also change the times format, timezone and add custom CSS if you need.
 3. Choose Single or Multiple To-Do Lists.
 4. For a Single Feed you can select exactly what To-Do list you want to display on your website.
 5. The multiple feed option allows you to choose a project which will then display all the  To-Do Lists in the project on your page.
