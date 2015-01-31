@@ -19,14 +19,11 @@ We utilize this plugin to display Suggested Improvements from our users about ou
   * Easily generate all the shortcodes you need for any feed with our SUPER SIMPLE shortcode generator
   * Responsive Feeds
 
-[To-Do Feed Example](http://www.slickremix.com/basecamp-feed-example)
-
 The premium version adds the Calendar Feed option which shows a list of your calendar events. It also allows you to change text size, colors and font styles for the To-Do List feeds and the Calendar Feeds.
 
-[Calendar Feed Example](http://www.slickremix.com/basecamp-calendar-feed-example)
-
 = Demos =
-  * Coming Soon!
+  * Free: [To-Do Feed Example](http://www.slickremix.com/basecamp-feed-example)
+  * Premium: [Calendar Feed Example](http://www.slickremix.com/basecamp-calendar-feed-example)
   
 ALL SlickRemix plugins come with FREE Support! If you need help or have questions we are here to help just post on our [Support Forum](http://www.slickremix.com/support-forum/) and we’ll get to you as quickly as we can! (usually within 48hrs)
 	
