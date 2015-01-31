@@ -10,7 +10,7 @@ Allows you to display Basecamp Feeds on your WordPress.
 
 == Description ==
 
-This plugin was created to show users, clients or whomever a list of what is being completed with dates and times from you BaseCamp account. When you check complete in BaseCamp it will automatically reflect that change on your website in the To-Do List. It’s that simple.
+This plugin was created to show users, clients or whomever a list of what is being completed with dates and times from your BaseCamp account. When you check complete in BaseCamp it will automatically reflect that change on your website in the To-Do List. It’s that simple.
 
 We utilize this plugin to display Suggested Improvements from our users about our wordpress plugins. And how nice when you can see a Checkmark next to something that has been completed. It makes your clients or users see that you’re hard at work.
 
@@ -22,8 +22,8 @@ We utilize this plugin to display Suggested Improvements from our users about ou
 The premium version adds the Calendar Feed option which shows a list of your calendar events. It also allows you to change text size, colors and font styles for the To-Do List feeds and the Calendar Feeds.
 
 = Demos =
-  * Free: [To-Do Feed Example](http://www.slickremix.com/basecamp-feed-example)
-  * Premium: [Calendar Feed Example](http://www.slickremix.com/basecamp-calendar-feed-example)
+  * Free: [To-Do List Feed Example](http://www.slickremix.com/basecamp-feed-example)
+  * Premium: [Calendar List Feed Example](http://www.slickremix.com/basecamp-calendar-feed-example)
   
 ALL SlickRemix plugins come with FREE Support! If you need help or have questions we are here to help just post on our [Support Forum](http://www.slickremix.com/support-forum/) and we’ll get to you as quickly as we can! (usually within 48hrs)
 	
