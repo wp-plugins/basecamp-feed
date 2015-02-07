@@ -51,7 +51,7 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 			$bcf_todos_completed_header_text_size = get_option('bcf_todos_completed_header_text_size');
 			
 			$bcf_todos_completed_text_color = get_option('bcf_todos_completed_content_color');
-			$bcf_todos_completed_text_size = get_option('bcf_todos_completed_content_color');
+			$bcf_todos_completed_text_size = get_option('bcf_todos_completed_content_size');
 			
 			$bcf_todos_completed_checkmark_color = get_option('bcf_todos_completed_checkmark_color');
 			$bcf_todos_completed_checkmark_size = get_option('bcf_todos_completed_checkmark_size');
