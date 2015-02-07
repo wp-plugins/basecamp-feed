@@ -38,6 +38,11 @@ If you enjoy using our plugin please tell others. [Click here to share](http://w
   * Extract the ZIP file and drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page. 
 
 == Changelog ==
+= Version 1.0.1 Saturday, February 7th, 2015 =
+  * NEW: Tabbed layout for the settings page
+  * NEW: Functionality for new options page available in our premium version.
+  * FIXED: A few php warnings when wp-debug is active
+
 = Version 1.0.0 Friday, January 23rd, 2015 =
   * Initial Release
 
