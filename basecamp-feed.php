@@ -2,7 +2,7 @@
 /*
 Plugin Name: BaseCamp Feed
 Plugin URI: http://slickremix.com/
-Description: Allows you to display Basecamp Feeds on your WordPress.
+Description: Allows you to display single or multiple To-do Lists from Basecamp
 Version: 1.0.1
 Author: SlickRemix
 Author URI: http://slickremix.com/

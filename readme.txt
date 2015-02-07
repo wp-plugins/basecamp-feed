@@ -6,7 +6,7 @@ Tested up to: 4.1.0
 Stable tag: 1.0.1
 License: GPLv2 or later
 
-Allows you to display Basecamp Feeds on your WordPress.
+Allows you to display single or multiple To-do Lists from Basecamp
 
 == Description ==
 
