@@ -50,8 +50,8 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 			$bcf_todos_completed_header_text_color = get_option('bcf_todos_completed_header_text_color');
 			$bcf_todos_completed_header_text_size = get_option('bcf_todos_completed_header_text_size');
 			
-			$bcf_todos_completed_text_color = get_option('bcf_todos_completed_text_color');
-			$bcf_todos_completed_text_size = get_option('bcf_todos_completed_text_size');
+			$bcf_todos_completed_text_color = get_option('bcf_todos_completed_content_color');
+			$bcf_todos_completed_text_size = get_option('bcf_todos_completed_content_color');
 			
 			$bcf_todos_completed_checkmark_color = get_option('bcf_todos_completed_checkmark_color');
 			$bcf_todos_completed_checkmark_size = get_option('bcf_todos_completed_checkmark_size');
@@ -72,7 +72,7 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 			
 echo '<style>'; 
 echo !empty($bcf_todos_title_color) ? '.bsf-todo-list-title{color:'.$bcf_todos_title_color.'!important;}' : '';
-echo !empty($bcf_todos_title_size) ? '.font-size{color:'.$bcf_todos_title_size.'!important;}' : '';
+echo !empty($bcf_todos_title_size) ? '.bsf-todo-list-title{font-size:'.$bcf_todos_title_size.'!important;}' : '';
 echo !empty($bcf_todos_description_text_color) ? '.bsf-todo-list-description{color:'.$bcf_todos_description_text_color.'!important;}' : '';
 echo !empty($bcf_todos_description_text_size) ? '.bsf-todo-list-description{font-size:'.$bcf_todos_description_text_size.'!important;}' : '';
 echo !empty($bcf_todos_description_style) ? '.bsf-todo-list-description{'.$bcf_todos_description_style.'!important;}' : '';
@@ -82,8 +82,8 @@ echo !empty($bcf_todos_text_color) ? '.bsf-todo-item{color:'.$bcf_todos_text_col
 echo !empty($bcf_todos_text_size) ? '.bsf-todo-item{font-size:'.$bcf_todos_text_size.'!important;}' : '';
 echo !empty($bcf_todos_completed_header_text_color) ? '.bsf-todo-list-title-completed{color:'.$bcf_todos_completed_header_text_color.'!important;}' : '';
 echo !empty($bcf_todos_completed_header_text_size) ? '.bsf-todo-list-title-completed{font-size:'.$bcf_todos_completed_header_text_size.'!important;}' : '';
-echo !empty($bcf_todos_completed_text_color) ? '.bcf-item-complete-list{color:'.$bcf_todos_completed_text_color.'!important;}' : '';
-echo !empty($bcf_todos_completed_text_size) ? '.bcf-item-complete-list{font-size:'.$bcf_todos_completed_text_size.'!important;}' : '';
+echo !empty($bcf_todos_completed_text_color) ? '.bsf-completed.bsf-todo-item{color:'.$bcf_todos_completed_text_color.'!important;}' : '';
+echo !empty($bcf_todos_completed_text_size) ? '.bsf-completed.bsf-todo-item{font-size:'.$bcf_todos_completed_text_size.'!important;}' : '';
 echo !empty($bcf_todos_completed_checkmark_color) ? '.bcf-item-complete-list div:before{color:'.$bcf_todos_completed_checkmark_color.'!important;}' : '';
 echo !empty($bcf_todos_completed_checkmark_size) ? '.bcf-item-complete-list div:before{font-size:'.$bcf_todos_completed_checkmark_size.'!important;}' : '';
 echo !empty($bcf_todos_completed_date_color) ? '.bsf-todo-item span{color:'.$bcf_todos_completed_date_color.'!important;}' : '';
