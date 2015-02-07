@@ -64,18 +64,18 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
 	// Settings Page Display
 	//***************************************************
 	function settings_page() { ?>
-<link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+    
 <div class="feed-them-social-admin-wrap">
   <h1>
     <?php _e('BaseCamp Feed', 'basecamp-feed'); ?>
   </h1>
   <div class="use-of-plugin">
-    <?php _e('Select what type of feed you would like to generate a shortcode for using the select option below. Then you\'ll copy that shortcode to a page or post.', 'basecamp-feed'); ?>
+    <?php _e('Connect to your Basecamp account first. Then you will be able to select what type of feed you would like to generate a shortcode for using the select option below. Then you\'ll copy that shortcode to a page or post.', 'basecamp-feed'); ?>
   </div>
   <div class="feed-them-icon-wrap">
     <?php
 		//show the js for the discount option under social icons on the settings page
-		if(!is_plugin_active('feed-them-premium/feed-them-premium.php')) { ?>
+		if(!is_plugin_active('basecamp-feed-premium/basecamp-feed-premium.php')) { ?>
     <div id="discount-for-review">
       <?php _e('15% off Premium Version', 'basecamp-feed'); ?>
     </div>
@@ -132,7 +132,17 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
     <input type="submit" class="feed-them-social-admin-submit-btn" value="<?php _e('Save Account Info', 'basecamp-feed') ?>" />
   </form>
   <?php if($basecamp->getProjects()){ ?>
-  <div class="fts-facebook_page-shortcode-form">
+  
+  <div class="tabs">    
+    <div class="tab-1 active">To-Do(s) Feed</div>
+    <div class="tab-2">Calendar Feed</div>
+</div>
+
+
+
+
+
+  <div class="fts-facebook_page-shortcode-form content-1">
     <form class="feed-them-social-admin-form shortcode-generator-form fb-page-shortcode-form" id="fts-fb-page-form" style="display: block;">
       <h2>
         <?php _e('Basecamp To-Do Shortcode Generator', 'basecamp-feed'); ?>
@@ -141,11 +151,11 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
         <div class="feed-them-social-admin-input-label">
           <?php _e('Feed Type', 'basecamp-feed'); ?>
         </div>
-        <select name="facebook-messages-selector" id="facebook-messages-selector" class="feed-them-social-admin-input">
-          <option value="page">
+        <select name="todo-list-selector" id="todo-list-selector" class="feed-them-social-admin-input">
+          <option value="singletodo">
           <?php _e('Single To-Do Feed', 'basecamp-feed'); ?>
           </option>
-          <option value="group">
+          <option value="multitodo">
           <?php _e('Multi To-Do Feed', 'basecamp-feed'); ?>
           </option>
         </select>
@@ -155,7 +165,7 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
       
       <div class="feed-them-social-admin-input-wrap project-id-select-wrap">
         <div class="feed-them-social-admin-input-label">
-          <?php _e('Project ID', 'basecamp-feed'); ?>
+          <?php _e('Project Name', 'basecamp-feed'); ?>
         </div>
         <select name="bcf-project-id" id="bcf-project-id" class="feed-them-social-admin-input">
           <option value="">Please Choose</option>
@@ -174,7 +184,7 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
       
       <div class="feed-them-social-admin-input-wrap to-dos-list-id-option">
         <div class="feed-them-social-admin-input-label">
-          <?php _e('To Do List ID', 'basecamp-feed'); ?>
+          <?php _e('To Do List Name', 'basecamp-feed'); ?>
         </div>
         <select name="bcf-todo-list-id" id="bcf-todo-list-id" class="feed-them-social-admin-input">
           <option value="">Please Choose</option>
@@ -211,7 +221,7 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
       </div>
       <!--/feed-them-social-admin-input-wrap-->
       
-      <input type="button" class="feed-them-social-admin-submit-btn" value="<?php _e('Generate Shortcode', 'basecamp-feed'); ?>" onclick="updateTextArea_fb_page();" tabindex="4" style="margin-right:1em;">
+      <input type="button" class="feed-them-social-admin-submit-btn" value="<?php _e('Generate Shortcode', 'basecamp-feed'); ?>" onclick="updateTextArea_bcf_todo();" tabindex="4" style="margin-right:1em;">
       <div class="feed-them-social-admin-input-wrap final-shortcode-textarea" style="display: none;">
         <h4>
           <?php _e('Copy the ShortCode below and paste it on a page or post that you want to display your feed.', 'basecamp-feed'); ?>
@@ -224,7 +234,130 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
       </div>
       <!--/feed-them-social-admin-input-wrap-->
     </form>
+
   </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="fts-facebook_page-shortcode-form content-2">
+    <form class="feed-them-social-admin-form shortcode-generator-form bcf-calendar-shortcode-form" id="fts-fb-page-form" style="display: block;">
+      
+      
+      <h2>
+        <?php _e('Basecamp Calendar Shortcode Generator', 'basecamp-feed'); ?>
+      </h2>
+      <div class="feed-them-social-admin-input-wrap">
+        <div class="feed-them-social-admin-input-label">
+          <?php _e('Feed Type', 'basecamp-feed'); ?>
+        </div>
+        <select name="calendar-type-selector" id="calendar-type-selector" class="feed-them-social-admin-input">
+         <option value="singlecalendar">
+          <?php _e('Single Calendar', 'basecamp-feed'); ?>
+          </option>
+          <option value="multicalendar">
+          <?php _e('Multi Calendar', 'basecamp-feed'); ?>
+          </option>
+
+        </select>
+        <div class="clear"></div>
+      </div>
+      <!--/feed-them-social-admin-input-wrap-->
+      
+      <div class="feed-them-social-admin-input-wrap calendar-id-select-wrap">
+        <div class="feed-them-social-admin-input-label">
+          <?php _e('Calendar Name', 'basecamp-feed'); ?>
+        </div>
+        <select name="bcf-calendar-id" id="bcf-calendar-id" class="feed-them-social-admin-input">
+          <option value="">Please Choose</option>
+          <?php
+             //Foreach Proejct Make option
+            foreach($basecamp->getCalendars() as $calendar) {
+               echo'<option value="'.$calendar->id.'">'.$calendar->name.'</option>';
+             }
+           ?>
+        </select>
+        <div class="clear"></div>
+      </div>
+      <!--/feed-them-social-admin-input-wrap-->
+      
+      <div class="feed-them-social-admin-input-wrap">
+        <div class="feed-them-social-admin-input-label">
+          <?php _e('Show Past Events', 'basecamp-feed'); ?>
+        </div>
+        <select name="bcf-calendar-past-events" id="bcf-calendar-past-events" class="feed-them-social-admin-input">
+          <option value="yes">
+          <?php _e('Yes', 'basecamp-feed'); ?>
+          </option>
+          <option value="no">
+          <?php _e('No', 'basecamp-feed'); ?>
+          </option>
+        </select>
+        <div class="clear"></div>
+      </div>
+      <!--/feed-them-social-admin-input-wrap-->
+      
+      <?php if(is_plugin_active('basecamp-feed-premium/basecamp-feed-premium.php')) { ?>
+      <input type="button" class="feed-them-social-admin-submit-btn" value="<?php _e('Generate Shortcode', 'basecamp-feed'); ?>" onclick="updateTextArea_bcf_calendar();" tabindex="4" style="margin-right:1em;">
+      <?php }
+	  else { ?>
+      <input type="button" class="feed-them-social-admin-submit-btn" value="<?php _e('Must Have Premium Extension', 'basecamp-feed'); ?>" onclick="location.href='http://www.slickremix.com/downloads/basecamp-feed-extension'" tabindex="4" style="margin-right:1em;">
+	 <?php }?>
+     
+      <div class="feed-them-social-admin-input-wrap final-shortcode-textarea2" style="display: none;">
+        <h4>
+          <?php _e('Copy the ShortCode below and paste it on a page or post that you want to display your feed.', 'basecamp-feed'); ?>
+        </h4>
+        <div class="feed-them-social-admin-input-label">
+          <?php _e('Basecamp Feed Shortcode', 'basecamp-feed'); ?>
+        </div>
+        <input class="copyme facebook-page-final-shortcode2 feed-them-social-admin-input" value="">
+        <div class="clear"></div>
+      </div>
+      <!--/feed-them-social-admin-input-wrap-->
+    </form>
+
+  </div>
+  
+  
+
   <?php } ?>
   <div class="clear"></div>
   
@@ -461,91 +594,149 @@ class BaseCamp_Feed_settings extends BaseCamp_Feed_Main {
   <a class="feed-them-social-admin-slick-logo" href="http://www.slickremix.com" target="_blank"></a> </div>
 <!--/feed-them-social-admin-wrap--> 
 <script>
-    jQuery(function() {    
-    // Master feed selector
-    jQuery('#shortcode-form-selector').change(function(){
-        jQuery('.shortcode-generator-form').hide();
-        jQuery('.' + jQuery(this).val()).fadeIn('fast');
-    });
-    
-	  jQuery('#bcf-todo-list-id').change(function(){	 
+	jQuery(function() {    
+	    // Master feed selector
+		jQuery('#shortcode-form-selector').change(function(){
+		    jQuery('.shortcode-generator-form').hide();
+		    jQuery('.' + jQuery(this).val()).fadeIn('fast');
+		});
+		    
+		jQuery('#bcf-todo-list-id').change(function(){	 
 			jQuery("#bcf-todo-list-id").find("option:selected").each(function(){
 			var opt_id = jQuery(this).parent().attr("id");
 			jQuery('#bcf-project-id').val(opt_id);
-	  });
-    });
- });
+			});
+		});
+	});
 	
-	 jQuery('#facebook-messages-selector').bind('change', function (e) { 
-		if(jQuery('select#facebook-messages-selector').val() == 'page') {
+	jQuery('#todo-list-selector').bind('change', function (e) { 
+		if(jQuery('select#todo-list-selector').val() == 'singletodo') {
 		 jQuery('.to-dos-list-id-option').show();
 		 jQuery('.project-id-select-wrap').hide();
 		}
 	});
 	
-	 jQuery('#facebook-messages-selector').bind('change', function (e) { 
-		if(jQuery('select#facebook-messages-selector').val() == 'group') {
+	jQuery('#todo-list-selector').bind('change', function (e) { 
+		if(jQuery('select#todo-list-selector').val() == 'multitodo') {
 		 jQuery('.to-dos-list-id-option').hide();
 		 jQuery('.project-id-select-wrap').show();
 		}
 	});
 	
-    //START Page JS/
-    function updateTextArea_fb_page() {
-    var account_id = ' account_id=' + jQuery("input#bcf-account-id").val(); 
-    var project_id = ' project_id=' + jQuery("select#bcf-project-id").val();
-    var completed = ' show_completed=' + jQuery("select#bcf-completed").val();
-    var todo_list_id = ' todo_list_id=' + jQuery("select#bcf-todo-list-id").val();
-    
+	jQuery('#calendar-type-selector').bind('change', function (e) { 
+		if(jQuery('select#calendar-type-selector').val() == 'singlecalendar') {
+		 jQuery('.calendar-id-select-wrap').show();
+		}
+	});
 	
-    if (account_id == " account_id=") {
-         jQuery(".fb_page_id").addClass('fts-empty-error');  
-         jQuery("input#account_id").focus();
-         return false;
-    }
-    if (account_id != " account_id=") {
-         jQuery(".fb_page_id").removeClass('fts-empty-error');  
-    }
-    
-                
-                if (jQuery("select#facebook-messages-selector").val() == "page") {
-                    var final_fb_page_shortcode = '[BCF single todo list' + account_id + project_id + todo_list_id + completed + ']';
-			   }
-			   else {
-				   var final_fb_page_shortcode = '[BCF multi todo list' + account_id + project_id + completed +']';
-			   }
-              
-    jQuery('.facebook-page-final-shortcode').val(final_fb_page_shortcode);
-    
-    jQuery('.fb-page-shortcode-form .final-shortcode-textarea').slideDown();
-    
+	jQuery('#calendar-type-selector').bind('change', function (e) { 
+		if(jQuery('select#calendar-type-selector').val() == 'multicalendar') {
+		 jQuery('.calendar-id-select-wrap').hide();
+		}
+	});    
+	
+    //START Page JS/
+    function updateTextArea_bcf_todo() {
+	    var account_id = ' account_id=' + jQuery("input#bcf-account-id").val(); 
+	    var project_id = ' project_id=' + jQuery("select#bcf-project-id").val();
+	    var completed = ' show_completed=' + jQuery("select#bcf-completed").val();
+	    var todo_list_id = ' todo_list_id=' + jQuery("select#bcf-todo-list-id").val();
+	         
+		if (jQuery("select#todo-list-selector").val() == "singletodo") {
+			if (todo_list_id == " todo_list_id=") {
+		        jQuery(".to-dos-list-id-option").addClass('bcf-empty-error');  
+		        jQuery("select#bcf-todo-list-id").focus();
+		        return false;
+		    }
+		    if (todo_list_id != " todo_list_id=") {
+		        jQuery(".to-dos-list-id-option").removeClass('bcf-empty-error');  
+		    }
+
+			var final_fb_page_shortcode = '[BCF single todo list' + account_id + project_id + todo_list_id + completed + ']';
+		}
+		else {
+			if (project_id == " project_id=") {
+		        jQuery(".project-id-select-wrap").addClass('bcf-empty-error');  
+		        jQuery("select#bcf-project-id").focus();
+		        return false;
+		    }
+		    if (project_id != " project_id=") {
+		        jQuery(".project-id-select-wrap").removeClass('bcf-empty-error');  
+		    }	
+		    
+			var final_fb_page_shortcode = '[BCF multi todo list' + account_id + project_id + completed +']';
+		}
+	              
+	    jQuery('.facebook-page-final-shortcode').val(final_fb_page_shortcode);
+	    jQuery('.fb-page-shortcode-form .final-shortcode-textarea').slideDown();
     }
     //END Page//
     
+	
+	//START Page JS/
+    function updateTextArea_bcf_calendar() { 
+	    var calendar_id = ' calendar_id=' + jQuery("select#bcf-calendar-id").val();
+	    var past_events = ' past_events=' + jQuery("select#bcf-calendar-past-events").val();
+	               
+		if (jQuery("select#calendar-type-selector").val() == "singlecalendar") {
+		   if (calendar_id == " calendar_id=") {
+		        jQuery(".calendar-id-select-wrap").addClass('bcf-empty-error');  
+		        jQuery("select#bcf-calendar-id").focus();
+		        return false;
+		    }
+		    if (calendar_id != " calendar_id=") {
+		        jQuery(".calendar-id-select-wrap").removeClass('bcf-empty-error');  
+		    }
+		   		    
+		   var final_bcf_calendar_shortcode = '[BCF single calendar'+ calendar_id + past_events +']';
+		}
+		else {
+		    var final_bcf_calendar_shortcode = '[BCF multi calendar'+ past_events +']';
+		}
+	              
+	    jQuery('.facebook-page-final-shortcode2').val(final_bcf_calendar_shortcode);
+	    jQuery('.final-shortcode-textarea2').slideDown();
+    }
+    //END Page//
+	
+	
     
     //select all 
     jQuery(".copyme").focus(function() {
-    var jQuerythis = jQuery(this);
-    jQuerythis.select();
-    
-    // Work around Chrome's little problem
-    jQuerythis.mouseup(function() {
-        // Prevent further mouseup intervention
-        jQuerythis.unbind("mouseup");
-        return false;
+	    var jQuerythis = jQuery(this);
+	    jQuerythis.select();
+	    
+	    // Work around Chrome's little problem
+	    jQuerythis.mouseup(function() {
+	        // Prevent further mouseup intervention
+	        jQuerythis.unbind("mouseup");
+	        return false;
+	    });
     });
-    });
-    
     jQuery( document ).ready(function() {
-    jQuery( ".toggle-custom-textarea-show" ).click(function() {  
-         jQuery('textarea#fts-color-options-main-wrapper-css-input').slideToggle();
-          jQuery('.toggle-custom-textarea-show span').toggle();
-          jQuery('.fts-custom-css-text').toggle();
-          
-    }); 
+    	jQuery( ".toggle-custom-textarea-show" ).click(function() {  
+        jQuery('textarea#fts-color-options-main-wrapper-css-input').slideToggle();
+        jQuery('.toggle-custom-textarea-show span').toggle();
+        jQuery('.fts-custom-css-text').toggle();  
+    });
+	jQuery( ".tab-1" ).click(function() {
+	   jQuery( ".content-1" ).fadeIn();
+	   jQuery( ".content-2" ).hide();
+	   jQuery( ".tab-1" ).addClass('active')
+	   jQuery( ".tab-2" ).removeClass('active')
+	});	
+	jQuery( ".tab-2" ).click(function() {
+	   jQuery( ".content-2" ).fadeIn();
+	   jQuery( ".content-1" ).hide();
+	  
+	   jQuery( ".tab-2" ).addClass('active')
+	   jQuery( ".tab-1" ).removeClass('active')
+	});	
+
+
     <?php
     //show the js for the discount option under social icons on the settings page
-    if(is_plugin_active('feed-them-premium/feed-them-premium.php')) {
+    if(is_plugin_active('basecamp-feed-premium/basecamp-feed-premium.php')) {
                 // do not show the js below
         }
     else { ?>

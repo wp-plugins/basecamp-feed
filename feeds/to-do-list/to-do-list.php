@@ -8,6 +8,7 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 		add_shortcode( 'BCF single todo list', array($this,'todo_single_list_func'));
 	
 		add_action('wp_enqueue_scripts', array( $this,'frontend_head'));
+		add_action('wp_head', array( $this,'todo_list_dynamic_css' ));
 	}
 	
 	///**************************************************
@@ -26,6 +27,80 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 		  wp_enqueue_script( 'basecamp-feed-powered-by-js', plugins_url( 'basecamp-feed/js/powered-by.js',  basename( dirname( __FILE__ ) )), array( 'jquery' ));
 		}
 	}
+	///**************************************************
+	// Frontend Dynamic Styles from Options Page
+	//***************************************************
+	function  todo_list_dynamic_css() { 
+		if(is_plugin_active('basecamp-feed-premium/basecamp-feed-premium.php')) {
+			// To-Do List Styles
+			$bcf_todos_title_color = get_option('bcf_todos_title_color');
+			$bcf_todos_title_size = get_option('bcf_todos_title_size');
+			
+			$bcf_todos_description_text_color = get_option('bcf_todos_description_text_color');
+			$bcf_todos_description_text_size = get_option('bcf_todos_description_text_size');
+			$bcf_todos_description_style = get_option('bcf_todos_description_style');
+			
+		
+			$bcf_todos_border_color = get_option('bcf_todos_border_color');
+			$bcf_todos_border_size = get_option('bcf_todos_border_size');
+			
+			$bcf_todos_text_color = get_option('bcf_todos_text_color');			
+			$bcf_todos_text_size = get_option('bcf_todos_text_size');
+			
+			$bcf_todos_completed_header_text_color = get_option('bcf_todos_completed_header_text_color');
+			$bcf_todos_completed_header_text_size = get_option('bcf_todos_completed_header_text_size');
+			
+			$bcf_todos_completed_text_color = get_option('bcf_todos_completed_text_color');
+			$bcf_todos_completed_text_size = get_option('bcf_todos_completed_text_size');
+			
+			$bcf_todos_completed_checkmark_color = get_option('bcf_todos_completed_checkmark_color');
+			$bcf_todos_completed_checkmark_size = get_option('bcf_todos_completed_checkmark_size');
+			
+			$bcf_todos_completed_date_color = get_option('bcf_todos_completed_date_color');
+			$bcf_todos_completed_date_size = get_option('bcf_todos_completed_date_size');
+			$bcf_todos_completed_date_style = get_option('bcf_todos_completed_date_style');
+			
+			
+			// Calendar Styles
+			$bcf_calendar_title_color = get_option('bcf_calendar_title_color');
+			$bcf_calendar_title_size = get_option('bcf_calendar_title_size');
+			$bcf_calendar_description_text_color = get_option('bcf_calendar_description_text_color');
+			$bcf_calendar_description_text_size = get_option('bcf_calendar_description_text_size');
+			$bcf_calendar_main_title_text_color = get_option('bcf_calendar_main_title_text_color');
+			$bcf_calendar_main_title_text_size = get_option('bcf_calendar_main_title_text_size');
+			$bcf_calendar_color = get_option('bcf_calendar_color');
+			
+echo '<style>'; 
+echo !empty($bcf_todos_title_color) ? '.bsf-todo-list-title{color:'.$bcf_todos_title_color.'!important;}' : '';
+echo !empty($bcf_todos_title_size) ? '.font-size{color:'.$bcf_todos_title_size.'!important;}' : '';
+echo !empty($bcf_todos_description_text_color) ? '.bsf-todo-list-description{color:'.$bcf_todos_description_text_color.'!important;}' : '';
+echo !empty($bcf_todos_description_text_size) ? '.bsf-todo-list-description{font-size:'.$bcf_todos_description_text_size.'!important;}' : '';
+echo !empty($bcf_todos_description_style) ? '.bsf-todo-list-description{'.$bcf_todos_description_style.'!important;}' : '';
+echo !empty($bcf_todos_border_color) ? '.bsf-todo-list-title{border-bottom-color:'.$bcf_todos_border_color.'!important;}' : '';
+echo !empty($bcf_todos_border_size) ? '.bsf-todo-list-title{border-bottom-width:'.$bcf_todos_border_size.'!important;}' : '';
+echo !empty($bcf_todos_text_color) ? '.bsf-todo-item{color:'.$bcf_todos_text_color.'!important;}' : '';
+echo !empty($bcf_todos_text_size) ? '.bsf-todo-item{font-size:'.$bcf_todos_text_size.'!important;}' : '';
+echo !empty($bcf_todos_completed_header_text_color) ? '.bsf-todo-list-title-completed{color:'.$bcf_todos_completed_header_text_color.'!important;}' : '';
+echo !empty($bcf_todos_completed_header_text_size) ? '.bsf-todo-list-title-completed{font-size:'.$bcf_todos_completed_header_text_size.'!important;}' : '';
+echo !empty($bcf_todos_completed_text_color) ? '.bcf-item-complete-list{color:'.$bcf_todos_completed_text_color.'!important;}' : '';
+echo !empty($bcf_todos_completed_text_size) ? '.bcf-item-complete-list{font-size:'.$bcf_todos_completed_text_size.'!important;}' : '';
+echo !empty($bcf_todos_completed_checkmark_color) ? '.bcf-item-complete-list div:before{color:'.$bcf_todos_completed_checkmark_color.'!important;}' : '';
+echo !empty($bcf_todos_completed_checkmark_size) ? '.bcf-item-complete-list div:before{font-size:'.$bcf_todos_completed_checkmark_size.'!important;}' : '';
+echo !empty($bcf_todos_completed_date_color) ? '.bsf-todo-item span{color:'.$bcf_todos_completed_date_color.'!important;}' : '';
+echo !empty($bcf_todos_completed_date_size) ? '.bsf-todo-item span{font-size:'.$bcf_todos_completed_date_size.'!important;}' : '';
+echo !empty($bcf_todos_completed_date_style) ? '.bsf-todo-item span{'.$bcf_todos_completed_date_style.'!important;}' : '';
+
+
+echo !empty($bcf_calendar_title_color) ? '.bsf-event-title{color:'.$bcf_calendar_title_color.'!important;}' : '';
+echo !empty($bcf_calendar_title_size) ? '.bsf-event-title{font-size:'.$bcf_calendar_title_size.'!important;}' : '';
+echo !empty($bcf_calendar_description_text_color) ? '.bsf-event-description{color:'.$bcf_calendar_description_text_color.'!important;}' : '';
+echo !empty($bcf_calendar_description_text_size) ? '.bsf-event-description{font-size:'.$bcf_calendar_description_text_size.'!important;}' : '';
+echo !empty($bcf_calendar_main_title_text_color) ? '.bsf-calendar-title{color:'.$bcf_calendar_main_title_text_color.'!important;}' : '';
+echo !empty($bcf_calendar_main_title_text_size) ? '.bsf-calendar-title{font-size:'.$bcf_calendar_main_title_text_size.'!important;}' : '';
+echo !empty($bcf_calendar_color) ? '.bsf-calendar-event-wrap .event_date, .bsf-calendar-event-wrap .dash{background:'.$bcf_calendar_color.'!important;}' : '';
+echo '</style>';
+ }
+	} // CLOSE Function basecamp_head_css
 	
 	///**************************************************
 	// ToDo Multi List Array
@@ -36,7 +111,8 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 				'project_id' => '',
 				'show_completed' => '',
 			), $atts ) );
-	
+		
+		ob_start();	
 		$basecamp = new Basecamp('BaseCampFeed');
 		$bcf_un = get_option('bcf_user_id');
 		$bcf_pw = get_option('bcf_password_id');
@@ -57,6 +133,7 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 		
 		//Display the ToDo list
 		echo $bsf_output;
+		return ob_get_clean();
 	}
 	
 	///**************************************************
@@ -69,7 +146,7 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 				'todo_list_id' => '',
 				'show_completed' => '',
 			), $atts ) );
-	
+		ob_start();		
 		$basecamp = new Basecamp('BaseCampFeed');
 		$bcf_un = get_option('bcf_user_id');
 		$bcf_pw = get_option('bcf_password_id');
@@ -86,6 +163,7 @@ class  BaseCamp_Feed_to_do_list extends BaseCamp_Feed_Main {
 		
 		//Display the ToDo list
 		echo $bsf_output;
+		return ob_get_clean();
 	}
 	
 	//**************************************************
